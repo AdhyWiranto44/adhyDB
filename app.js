@@ -3,21 +3,21 @@ const fs = require("fs");
 
 // Membuat Database baru
 module.exports.makeDatabase = (dbName) => {
-  fs.writeFile(`${dbName}.json`, "{}", () => {
+  fs.writeFile(`./databases/${dbName}.json`, "{}", () => {
     console.log(`Database ${dbName} is created!`);
   });
 };
 
 // Menambahkan Collection baru pada Database
 module.exports.makeCollection = (dbName, collectionName) => {
-    fs.readFile(`${dbName}.json`, 'utf-8', (err, data) => {
+    fs.readFile(`./databases/${dbName}.json`, 'utf-8', (err, data) => {
         if (err) throw err;
 
         data = JSON.parse(data);
         data[collectionName] = [];
         data = JSON.stringify(data);
         
-        fs.writeFile(`${dbName}.json`, data, () => {
+        fs.writeFile(`./databases/${dbName}.json`, data, () => {
             console.log(`Collection ${collectionName} is added to db ${dbName}!`);
             console.log(data);
         })
