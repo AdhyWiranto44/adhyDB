@@ -16,6 +16,5 @@ Database akan dibuat dalam bentuk file .json, misalkan <code>makeDatabase("kampu
 <code>makeCollection(nama_database, nama_collection)</code>
 ```
 npm run db make_collection -- nama_database nama_collection
-node -e 'require("./app").makeCollection(nama_database, nama_collection)'
 ```
 Setiap Collection akan ditambahkan berdasarkan Database-nya, misalkan <code>makeCollection("kampusDB", "mahasiswa")</code> akan menghasilkan key-value pair dengan <code>"mahasiswa": [],</code>
