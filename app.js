@@ -24,6 +24,17 @@ module.exports.makeCollection = (dbName, collectionName) => {
     });
 }
 
+// Drop Database
+module.exports.dropDatabase = (dbName) => {
+  let path = `./databases/${dbName}.json`;
+
+  fs.unlink(path, (err) => {
+    if (err) throw err;
+
+    console.log(dbName, 'successfully dropped!');
+  })
+}
+
 // Drop Collection
 module.exports.dropCollection = (dbName, collectionName) => {
   fs.readFile(`./databases/${dbName}.json`, 'utf-8', (err, data) => {

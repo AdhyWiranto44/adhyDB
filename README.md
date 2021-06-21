@@ -27,3 +27,10 @@ Setiap Collection akan ditambahkan berdasarkan Database-nya, misalkan <code>make
 npm run db drop_collection -- nama_database nama_collection
 ```
 Collection akan di-drop dari database yang berhubungan, misalkan <code>dropCollection("kampusDB", "ruangan")</code> akan menghapus property ruangan pada db kampusDB.
+
+### Drop Database
+<code>dropDatabase(nama_database)</code>
+```
+npm run db drop_database -- nama_database
+```
+Database akan di-drop dalam artian file JSON-nya akan dihapus, misalkan <code>dropDatabase("kampusDB")</code> akan menghapus file kampusDB.json

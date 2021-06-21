@@ -11,6 +11,9 @@ switch(arg[2]) {
     case "drop_collection":
         execSync(`node -e 'require("./app").dropCollection("${arg[3]}", "${arg[4]}")'`, {stdio:[0, 1, 2]});
         break;
+    case "drop_database":
+        execSync(`node -e 'require("./app").dropDatabase("${arg[3]}")'`, {stdio:[0, 1, 2]});
+        break;
     default:
         console.log("Command unavailable!");
 }
