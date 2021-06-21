@@ -1,5 +1,7 @@
 # adhyDB
-Welcome to adhyDB, a simple built-in database for you small-size app! adhyDB merupakan database noSQL yang dibuat dengan JavaScript (Node.js) yang memungkinkan untuk dipakai pada aplikasi yang tidak memerlukan database seperti mongoDB atau MySQL. Cocok untuk aplikasi yang ringan secara fungsionalitas.
+Welcome to adhyDB, a simple built-in database for you small-size app! 
+
+adhyDB merupakan database noSQL yang dibuat dengan JavaScript (Node.js) yang memungkinkan untuk dipakai pada aplikasi yang tidak memerlukan database seperti mongoDB atau MySQL. Cocok untuk aplikasi yang ringan secara fungsionalitas.
 
 ## Masih dalam tahap pengembangan
 Cara penggunaan program: buka folder adhyDB lalu jalankan perintah-perintah yang disediakan
@@ -18,3 +20,10 @@ Database akan dibuat dalam bentuk file .json, misalkan <code>makeDatabase("kampu
 npm run db make_collection -- nama_database nama_collection
 ```
 Setiap Collection akan ditambahkan berdasarkan Database-nya, misalkan <code>makeCollection("kampusDB", "mahasiswa")</code> akan menghasilkan key-value pair dengan <code>"mahasiswa": [],</code>
+
+### Drop Collection dari Database
+<code>dropCollection(nama_database, nama_collection)</code>
+```
+npm run db drop_collection -- nama_database nama_collection
+```
+Collection akan di-drop dari database yang berhubungan, misalkan <code>dropCollection("kampusDB", "ruangan")</code> akan menghapus property ruangan pada db kampusDB.

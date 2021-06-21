@@ -24,6 +24,22 @@ module.exports.makeCollection = (dbName, collectionName) => {
     });
 }
 
+// Drop Collection
+module.exports.dropCollection = (dbName, collectionName) => {
+  fs.readFile(`./databases/${dbName}.json`, 'utf-8', (err, data) => {
+    if (err) throw err;
+
+    data = JSON.parse(data);
+    delete data[collectionName];
+    data = JSON.stringify(data);
+
+    fs.writeFile(`./databases/${dbName}.json`, data, () => {
+      console.log(`Collection ${collectionName} is dropped from db ${dbName}!`);
+      console.log(data);
+    })
+  });
+}
+
 // let handleRequest = (req, res) => {
 //     res.writeHead(200, {
 //         "Content-Type": "text/html"
